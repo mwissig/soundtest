@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Soundtest</title>
+    <title>Kalimba</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,24 +15,28 @@
   </head>
 
   <body>
-    <% if !flash.empty? %>
-  <div class="flash-messages-container">
-    <% flash.each do |name, msg| %>
-      <% if msg.is_a?(String) && [:success, :info, :error, :warning].include?(name) %>
-        <div class="flash-message" data-type="<%= name %>" >
-          <%= msg %>
-        </div>
-        <% else %>
-        <div class="flash-message" data-type="info" >
-          <%= msg %>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-  <% flash.clear %>
-<% end %>
+<header>
+  <h1>Kalimba</h1>
 <%= link_to "Home", root_path %>
 <%= link_to "Songs", songs_path %>
+<% if !flash.empty? %>
+<div class="flash-messages-container">
+<% flash.each do |name, msg| %>
+  <% if msg.is_a?(String) && [:success, :info, :error, :warning].include?(name) %>
+    <div class="flash-message" data-type="<%= name %>" >
+      <%= msg %>
+    </div>
+    <% else %>
+    <div class="flash-message" data-type="info" >
+      <%= msg %>
+    </div>
+  <% end %>
+<% end %>
+</div>
+<% flash.clear %>
+<% end %>  </header>
+<div class="content">
     <%= yield %>
+</div>
   </body>
 </html>
