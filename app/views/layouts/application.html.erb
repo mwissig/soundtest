@@ -4,12 +4,35 @@
     <title>Soundtest</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Roboto+Condensed" rel="stylesheet">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.12.4.js"></script>
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   </head>
 
   <body>
+    <% if !flash.empty? %>
+  <div class="flash-messages-container">
+    <% flash.each do |name, msg| %>
+      <% if msg.is_a?(String) && [:success, :info, :error, :warning].include?(name) %>
+        <div class="flash-message" data-type="<%= name %>" >
+          <%= msg %>
+        </div>
+        <% else %>
+        <div class="flash-message" data-type="info" >
+          <%= msg %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <% flash.clear %>
+<% end %>
+<%= link_to "Home", root_path %>
+<%= link_to "Songs", songs_path %>
     <%= yield %>
   </body>
 </html>

@@ -1,2 +1,42 @@
-<h1>Play a song</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Kalimba</h1>
+<div class="kalimba">
+  <div class="circle"></div>
+<ul class="keys">
+<li onclick="play('C8', 'sawtooth')">8C</li>
+<li onclick="play('A6', 'sawtooth')">6A</li>
+<li onclick="play('F4', 'sawtooth')">F4</li>
+<li onclick="play('D2', 'sawtooth')">D2</li>
+<li onclick="play('C1', 'sawtooth')">C1</li>
+<li onclick="play('E3', 'sawtooth')">E3</li>
+<li onclick="play('G5', 'sawtooth')">G5</li>
+<li onclick="play('B7', 'sawtooth')">B7</li>
+</ul>
+</div>
+<div class="form">
+After creating a song you like, use this form to submit it to the database.
+  <%= form_for @song do |f| %>
+  <%= f.hidden_field :notes %>
+  <%= f.text_field :title, placeholder: "title" %>
+  <%= f.text_field :performer, placeholder: "performer" %>
+  <%= f.submit "Save" %>
+  <% end %>
+<br>
+<form>
+<input type="text" id="status" value="Recording"> Status<br>
+</form>
+<!-- <input type="text" id="note"> Last Note<br>
+<input type="text" id="timer"> Time between last notes<br>
+<input type="text" id="notenumber"> Last note number<br>
+<input type="text" id="songstring"> Song as a string<br> -->
+
+<button onclick="playback()">Play</button>
+<button onclick="reset()">Rewind</button>
+<button onclick="clearSong()">Delete Recording</button><br>
+  You must rewind to play your song again.<br>
+  Recording starts automatically.<br>
+  Playback will not pause recording.<br>
+  Deleting recording will start new recording.<br>
+  Current issues: Sometimes notes will stop playing due to lag; you will have to wait or refresh to fix.
+</div>
+<!-- Note frequencies from https://gist.github.com/marcgg/94e97def0e8694f906443ed5262e9cbb -->
+<!-- Audio tutorial http://marcgg.com/blog/2016/11/01/javascript-audio/ -->

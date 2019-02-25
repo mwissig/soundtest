@@ -1,0 +1,5 @@
+<ul><% @songs.each do |song| %>
+<li><%= song.title %> by <%= song.performer %> <button onclick="playFromString('<%= song.notes %>')">Play</button></li>
+<% end %>
+</ul>
+<%= will_paginate @songs %>

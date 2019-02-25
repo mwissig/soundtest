@@ -13,3 +13,58 @@
  *= require_tree .
  *= require_self
  */
+.kalimba {
+  background-color: red;
+  height: 500px;
+  width: 500px;
+  position: absolute;
+  z-index: 1;
+}
+.circle {
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+  z-index: 0;
+  top: 200px;
+  left: 150px;
+  height: 200px;
+  width: 200px;
+}
+.keys {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  justify-content: space-around;
+  height: 500px;
+  width: 500px;
+  list-style: none;
+  padding: 0;
+}
+.keys li {
+  height: 70%;
+  width:62px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: -moz-linear-gradient(left, transparent 0%, transparent 30%, rgb(194, 194, 194) 30%, rgb(194, 194, 194) 70%, rgb(194, 194, 194) 70%, transparent 70%, transparent 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, transparent 0%,transparent 30%,rgb(194, 194, 194) 30%,rgb(194, 194, 194) 70%,rgb(194, 194, 194) 70%,transparent 70%,transparent 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, transparent 0%,transparent 30%,rgb(194, 194, 194) 30%,rgb(194, 194, 194) 70%,rgb(194, 194, 194) 70%,transparent 70%,transparent 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.keys li:nth-child(7n+1) {
+  height: 64%;
+}
+.keys li:nth-child(5n+2) {
+  height: 66%;
+}
+.keys li:nth-child(3n+3) {
+  height: 68%;
+}
+.keys li:active {
+  background: -moz-linear-gradient(left, transparent 0%, transparent 30%, white 30%, white 70%, white 70%, transparent 70%, transparent 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, transparent 0%,transparent 30%,white 30%,white 70%,white 70%,transparent 70%,transparent 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, transparent 0%,transparent 30%,white 30%,white 70%,white 70%,transparent 70%,transparent 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.form {
+  position: absolute;
+  left: 600px;
+}
