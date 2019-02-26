@@ -273,3 +273,64 @@ function clearSong() {
   document.getElementById("status").value="Recording";
 
 }
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+        case 65:
+        play('C8', 'sawtooth');
+        document.getElementById("a").classList.add("keypress");
+        setTimeout(function(){
+        document.getElementById("a").classList.remove("keypress");
+         }, 300);
+            break;
+        case 83:
+        play('A6', 'sawtooth');
+        document.getElementById("s").classList.add("keypress");
+        setTimeout(function(){
+        document.getElementById("s").classList.remove("keypress");
+         }, 300);
+            break;
+        case 68:
+        play('F4', 'sawtooth');
+        document.getElementById("d").classList.add("keypress");
+        setTimeout(function(){
+        document.getElementById("d").classList.remove("keypress");
+         }, 300);
+            break;
+        case 70:
+        play('D2', 'sawtooth');
+        document.getElementById("f").classList.add("keypress");
+        setTimeout(function(){
+        document.getElementById("f").classList.remove("keypress");
+         }, 300);
+        break;
+        case 72:
+        play('C1', 'sawtooth');
+        document.getElementById("h").classList.add("keypress");
+        setTimeout(function(){
+        document.getElementById("h").classList.remove("keypress");
+        }, 300);
+        break;
+        case 74:
+        play('E3', 'sawtooth');
+        document.getElementById("j").classList.add("keypress");
+        setTimeout(function(){
+        document.getElementById("j").classList.remove("keypress");
+         }, 300);
+        break;
+        case 75:
+        play('G5', 'sawtooth');
+        document.getElementById("k").classList.add("keypress");
+        setTimeout(function(){
+        document.getElementById("k").classList.remove("keypress");
+         }, 300);
+        break;
+        case 76:
+        play('B7', 'sawtooth');
+        document.getElementById("l").classList.add("keypress");
+        setTimeout(function(){
+        document.getElementById("l").classList.remove("keypress");
+         }, 300);
+        break;
+    }
+};
