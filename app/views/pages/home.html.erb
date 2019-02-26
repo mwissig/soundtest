@@ -13,7 +13,10 @@
 </ul>
 </div>
 <div class="form">
-After creating a song you like, use this form to submit it to the database.
+  <p>Click on the keys or use the ASDF and HJKL keys on your keyboard to play music.</p>
+  <p>Once you're done, you can play back or publish your song.</p>
+
+After creating a song you like, title it and use this form to submit it to the database.<br>
   <%= form_for @song do |f| %>
   <%= f.hidden_field :notes %>
   <%= f.text_field :title, placeholder: "title" %>
