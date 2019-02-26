@@ -273,8 +273,10 @@ function clearSong() {
   document.getElementById("status").value="Recording";
 
 }
+var recording = true;
 
 document.onkeydown = function(e) {
+  if (recording == true) {
     switch (e.keyCode) {
         case 65:
         play('C8', 'sawtooth');
@@ -334,3 +336,15 @@ document.onkeydown = function(e) {
         break;
     }
 };
+}
+
+function toggleRecording() {
+  if (recording == true) {
+    recording = false;
+    document.getElementById("toggler").innerHTML = "Turn Keyboard On"
+  }
+  else if (recording == false) {
+    recording = true;
+        document.getElementById("toggler").innerHTML = "Turn Keyboard Off"
+  }
+}

@@ -17,6 +17,7 @@
   <p>Once you're done, you can play back or publish your song.</p>
 
 After creating a song you like, title it and use this form to submit it to the database.<br>
+<button id="toggler" onclick="toggleRecording()">Turn Keyboard Off</button>
   <%= form_for @song do |f| %>
   <%= f.hidden_field :notes %>
   <%= f.text_field :title, placeholder: "title" %>
@@ -35,7 +36,6 @@ After creating a song you like, title it and use this form to submit it to the d
   Deleting recording will start new recording.<br>
   Current issues: <ol><li>Sometimes notes will stop playing due to lag; you will have to wait or refresh to fix.</li>
     <li>Sound quality is higher for saved music than in the initial player.</li>
-    <li>Key presses made while typing produce notes.</li>
   </ol>
 </div>
 <!-- Note frequencies from https://gist.github.com/marcgg/94e97def0e8694f906443ed5262e9cbb -->
